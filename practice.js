@@ -113,14 +113,15 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-// function uniq(arr, cb) {
-//   newArray = [];
-//   for(let i = 0; i < arr.length; i++) {
-    
-//   }
-//   console.log(newArr);
-  
-// }
+function uniq(arr, messageFn) {
+  let newArr = [];
+  arr.forEach(elem => {
+    if(!newArr.includes(elem)) {
+      newArr.push(elem);
+    }
+  });
+  messageFn(newArr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
